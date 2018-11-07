@@ -2,15 +2,25 @@ package ar.com.nat.scoring.response;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import ar.com.nat.scoring.restconsuming.modelos.EnviarSMSRest;
+@Entity
 public class VerificaSMSResponse implements Serializable{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	String id;
+	@Id
+	Integer id;
 	Integer request_id;
 	String message;
+	@JsonIgnore
+	transient EnviarSMSRest sms;
 	
 
 	public String getMessage() {
@@ -19,10 +29,10 @@ public class VerificaSMSResponse implements Serializable{
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public Integer getRequest_id() {
@@ -30,6 +40,12 @@ public class VerificaSMSResponse implements Serializable{
 	}
 	public void setRequest_id(Integer request_id) {
 		this.request_id = request_id;
+	}
+	public EnviarSMSRest getSms() {
+		return sms;
+	}
+	public void setSms(EnviarSMSRest sms) {
+		this.sms = sms;
 	}
 
 }

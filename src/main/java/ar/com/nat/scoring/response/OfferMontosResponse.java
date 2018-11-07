@@ -7,17 +7,17 @@ import io.swagger.annotations.ApiModelProperty;
 public class OfferMontosResponse {
 	
 	@ApiModelProperty(notes="Id de Persona")
-	String id;
+	Integer id;
 	@ApiModelProperty(notes="Range")
 	Range range;
 	@ApiModelProperty(notes="mensajes generales")
 	transient String message;
 	
 	
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public Range getRange() {

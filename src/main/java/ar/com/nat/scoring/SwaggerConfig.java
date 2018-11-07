@@ -14,11 +14,13 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+
+
 @Configuration
 @EnableSwagger2
 	public class SwaggerConfig extends WebMvcConfigurationSupport {
 	    @Bean
-	    public Docket api() {
+	    public  Docket productApi() {
 	        return new Docket(DocumentationType.SWAGGER_2)
 	                .select()
 	                .apis(RequestHandlerSelectors.basePackage("ar.com.nat.scoring.controllers"))
@@ -29,11 +31,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 	    private ApiInfo metaData() {
 	        return new ApiInfoBuilder()
 	                .title("Rest Guay servicios")
-	                .description("\"Rest solicitudes Guay\"")
-	                .version("1.0.2-SNAPSHOT")
-	                .license("Apache License Version 2.0")
-	                .licenseUrl("natconsultores.com.ar\"")
-	                .contact(new Contact("Nat consultores", "natconsultores.com.ar", "natconsultores@nat.com.ar"))
+	                .description("\"solicitudes Guay\"")
+	                .version("1.0.3-SNAPSHOT")
+	                .license("Apache License Version 2.1")
+	                .licenseUrl("\"natconsultores.com\"")
+	                .contact(new Contact("Nat consultores", "natconsultores.com", "natconsultores@nat.com.ar"))
 	                .build();
 	    }
 	    @Override
